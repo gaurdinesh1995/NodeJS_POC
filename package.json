@@ -1,10 +1,10 @@
 {
   "name": "nodejs_poc",
   "version": "1.0.0",
-  "description": "db_url: \"mongodb+srv://testdb:testdb@blogs.1ikjkug.mongodb.net/\",",
-  "main": "index.js",
+  "description": "",
+  "main": "src/index.ts",
   "scripts": {
-    "start": ""
+    "start": "nodemon --exec ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
