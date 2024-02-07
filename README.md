@@ -12,4 +12,5 @@ Setup Node JS Project:
        npm install typescript ts-node express node @types/express @types/node nodemon @types/nodemon    
        npm install mongoose @types/mongoose
        npm install body-parser
+       npm i express-validator @types/express-validator
       
