@@ -1,6 +1,6 @@
 # NodeJS_POC
 Setup Node JS Project:
-1. Install these dependencies on global and project level
+1. Install these dependencies on global level
 
    
          npm install -g typescript node
