@@ -18,7 +18,7 @@ export class UserController {
     try {
       let user = await new User(data).save();
       res.send(user);
-        await Nodemailer.sendEmail({
+      await Nodemailer.sendEmail({
         to: [data.email],
         subject: "Testing email",
         html: `<h1>${verificationToken} </h1>`,
@@ -52,4 +52,25 @@ export class UserController {
       next(error);
     }
   }
+  static async resendVerificationEmail(req, res, next) {
+    const email = req.query.email;
+    const verificationToken = Utils.generateVerificationToken();
+    try {
+        const user: any = await User.findOneAndUpdate({email: email}, {
+            verification_token: verificationToken,
+            verification_token_time: Date.now() + new Utils().MAX_TOKEN_TIME
+        });
+        if (user) {
+             await Nodemailer.sendEmail({
+                to: [user.email], subject: 'Email Verification',
+                html: `<h1>${verificationToken}</h1>`
+            });
+            res.json({success: true})
+        } else {
+            throw  Error('User Does Not Exist');
+        }
+    } catch (e) {
+        next(e);
+    }
+}
 }
