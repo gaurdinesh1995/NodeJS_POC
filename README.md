@@ -14,4 +14,5 @@ Setup Node JS Project:
        npm install body-parser
        npm i express-validator @types/express-validator
        npm install @types/nodemailer nodemailer nodemailer-sendgrid-transport
+       npm install bcrypt @types/bcrypt
       
