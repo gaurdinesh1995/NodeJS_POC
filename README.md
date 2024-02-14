@@ -13,4 +13,5 @@ Setup Node JS Project:
        npm install mongoose @types/mongoose
        npm install body-parser
        npm i express-validator @types/express-validator
+       npm install @types/nodemailer nodemailer nodemailer-sendgrid-transport
       
